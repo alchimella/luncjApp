@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full?skin=dark"></script>
+
+    <meta name="theme-color" content="#000000">
+    <title>React App</title>
+  </head>
+  <body>
+  <script>
+  </script>
+  <div id = "location"></div>Вы кликнули в: <span id = "clicked_element"></span>
+  <!--<div id="map" style="width:320px; height:563px"></div>
+  <script type="text/javascript">
+      let locationInfo = document.getElementById('location');
+      let clickedElement = document.getElementById('clicked_element');
+
+      // DG.then отвечает за отслеживание момента загрузки API карт и добавление обработчиков этого действия
+      DG.then(function () {
+          let map,
+              marker;
+
+          // Карта с координатами Бишкека
+          map = DG.map('map', {
+              center: [42.87, 74.59],
+              zoom: 15
+          });
+
+          // Функция переноски маркера на карте
+          marker = DG.marker([42.87, 74.59], {
+              draggable: true
+          }).addTo(map);
+
+          marker.on('drag', function(e) {
+              let lat = e.target._latlng.lat.toFixed(3),
+                  lng = e.target._latlng.lng.toFixed(3);
+
+              locationInfo.innerHTML = lat + ', ' + lng;
+          });
+
+          // Отслеживание кликов
+          map.on('click', function(e) {
+              clickedElement.innerHTML = 'карту, координаты ' + e.latlng.lat + ', ' + e.latlng.lng;
+          });
+
+          //
+          marker.bindPopup('Test');
+      });
+  </script>-->
+  <div id="googleMap" style="width:100%; height:560px"></div>
+  <div id="map"></div>
+  <label for="address">Введите место</label>
+  <input id="address" type="text" value="Bishkek, Kyrgizstan">
+  <input id="submit" type="button" value="Geocode">
+  <script src="google_map_api/connect_map_module.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0cdU9wpBC5QHLuSfRGiA__JNR_EuWFZY&callback=initMap&language=ru"></script>
+  <div id="root"></div>
+    <script src="server/create_db_module.js"></script>
+
+  </body>
+</html>
